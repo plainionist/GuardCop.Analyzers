@@ -10,8 +10,8 @@
 
   <PropertyGroup>
     <PackageId>GuardCop.Analyzers</PackageId>
-    <PackageVersion>1.1.0.0</PackageVersion>
-    <Version>1.1.0</Version>
+    <PackageVersion>1.2.0.0</PackageVersion>
+    <Version>1.2.0</Version>
     <Authors>plainionist</Authors>
     <Description>Code analyzers and fixers to ensure Design-by-Contract based on naming conventions</Description>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>

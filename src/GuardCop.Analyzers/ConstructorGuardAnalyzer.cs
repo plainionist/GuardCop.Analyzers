@@ -10,7 +10,7 @@ namespace GuardCop.Analyzers;
 [DiagnosticAnalyzer(LanguageNames.CSharp)]
 public class ConstructorGuardAnalyzer : DiagnosticAnalyzer
 {
-    internal const string DiagnosticId = "CC0001";
+    internal const string DiagnosticId = "GC0001";
     internal const string MessageFormat = "Parameter '{0}' is not guarded using the Contract API";
 
     private static readonly DiagnosticDescriptor Rule = new(
