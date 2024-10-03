@@ -1,2 +1,3 @@
 # GuardCop.Analyzers
-Code analyzers to ensure Design-by-Contract
+
+Code analyzers and code fixers to ensure Design-by-Contract based on naming conventions.
