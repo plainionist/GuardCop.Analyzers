@@ -4,16 +4,25 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <IsPackable>true</IsPackable>
     <LangVersion>Latest</LangVersion>
-
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <PackageId>GuardCop.Analyzers</PackageId>
-    <Version>1.0.0</Version>
+    <PackageVersion>1.1.0.0</PackageVersion>
+    <Version>1.1.0</Version>
     <Authors>plainionist</Authors>
     <Description>Code analyzers and fixers to ensure Design-by-Contract based on naming conventions</Description>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/plainionist/GuardCop.Analyzers</RepositoryUrl>
     <PackageTags>Roslyn Analyzers, Design by Contract, Guards</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,6 +33,13 @@
 
   <ItemGroup>
     <None Include="../../README.md" Pack="true" PackagePath="\"/>
+    <None Update="tools\*.ps1" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" />
   </ItemGroup>
+
+  <Target Name="_AddAnalyzersToOutput">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)\GuardCop.Analyzers.dll" PackagePath="analyzers/dotnet/cs" />
+    </ItemGroup>
+  </Target>
 
 </Project>
